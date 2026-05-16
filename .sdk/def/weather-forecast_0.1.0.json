@@ -1,0 +1,288 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Weather Forecast API",
+    "description": "This API provides real-time weather data, including temperature, humidity, and forecasts for various locations. Users can access detailed meteorological information to integrate into their applications.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://www.baguette-radar.com/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.baguette-radar.com/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/weather": {
+      "get": {
+        "summary": "Get weather forecast",
+        "description": "Retrieves real-time weather data including temperature, humidity, and forecasts for a specified location",
+        "operationId": "getWeatherForecast",
+        "parameters": [
+          {
+            "name": "location",
+            "in": "query",
+            "description": "Location name (city, address, or coordinates)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Paris"
+          },
+          {
+            "name": "units",
+            "in": "query",
+            "description": "Units of measurement (metric or imperial)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "metric",
+                "imperial"
+              ],
+              "default": "metric"
+            }
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "description": "Number of forecast days to retrieve",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 7,
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with weather data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "location": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "description": "Location name"
+                        },
+                        "country": {
+                          "type": "string",
+                          "description": "Country code"
+                        },
+                        "latitude": {
+                          "type": "number",
+                          "format": "double",
+                          "description": "Latitude coordinate"
+                        },
+                        "longitude": {
+                          "type": "number",
+                          "format": "double",
+                          "description": "Longitude coordinate"
+                        }
+                      }
+                    },
+                    "current": {
+                      "type": "object",
+                      "properties": {
+                        "temperature": {
+                          "type": "number",
+                          "format": "double",
+                          "description": "Current temperature"
+                        },
+                        "humidity": {
+                          "type": "number",
+                          "format": "double",
+                          "description": "Current humidity percentage"
+                        },
+                        "conditions": {
+                          "type": "string",
+                          "description": "Current weather conditions"
+                        },
+                        "wind_speed": {
+                          "type": "number",
+                          "format": "double",
+                          "description": "Wind speed"
+                        },
+                        "pressure": {
+                          "type": "number",
+                          "format": "double",
+                          "description": "Atmospheric pressure"
+                        },
+                        "timestamp": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "Timestamp of the weather data"
+                        }
+                      }
+                    },
+                    "forecast": {
+                      "type": "array",
+                      "description": "Array of forecast data for upcoming days",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "date": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "Forecast date"
+                          },
+                          "temperature_high": {
+                            "type": "number",
+                            "format": "double",
+                            "description": "High temperature for the day"
+                          },
+                          "temperature_low": {
+                            "type": "number",
+                            "format": "double",
+                            "description": "Low temperature for the day"
+                          },
+                          "humidity": {
+                            "type": "number",
+                            "format": "double",
+                            "description": "Average humidity percentage"
+                          },
+                          "conditions": {
+                            "type": "string",
+                            "description": "Expected weather conditions"
+                          },
+                          "precipitation_chance": {
+                            "type": "number",
+                            "format": "double",
+                            "description": "Probability of precipitation (0-100)"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "location": {
+                    "name": "Paris",
+                    "country": "FR",
+                    "latitude": 48.8566,
+                    "longitude": 2.3522
+                  },
+                  "current": {
+                    "temperature": 22.5,
+                    "humidity": 65,
+                    "conditions": "Partly Cloudy",
+                    "wind_speed": 15.3,
+                    "pressure": 1013.25,
+                    "timestamp": "2024-01-15T14:30:00Z"
+                  },
+                  "forecast": [
+                    {
+                      "date": "2024-01-16",
+                      "temperature_high": 24,
+                      "temperature_low": 18,
+                      "humidity": 70,
+                      "conditions": "Sunny",
+                      "precipitation_chance": 10
+                    },
+                    {
+                      "date": "2024-01-17",
+                      "temperature_high": 21,
+                      "temperature_low": 16,
+                      "humidity": 75,
+                      "conditions": "Rainy",
+                      "precipitation_chance": 80
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Error code"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Invalid location parameter",
+                  "code": "INVALID_LOCATION"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Location not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Error code"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Location not found",
+                  "code": "LOCATION_NOT_FOUND"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Error code"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Internal server error",
+                  "code": "INTERNAL_ERROR"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Weather"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Weather",
+      "description": "Weather data and forecast operations"
+    }
+  ]
+}

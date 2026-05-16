@@ -1,0 +1,97 @@
+# Entity: weather
+
+main: kit: entity: weather: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "condition"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "humidity"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "precipitation_chance"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "temperature_high"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "temperature_low"
+      req: false
+      type: "`$NUMBER`"
+    }
+  ]
+
+  name: "weather"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: 5
+                kind: "query"
+                name: "day"
+                orig: "day"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: "Paris"
+                kind: "query"
+                name: "location"
+                orig: "location"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: "metric"
+                kind: "query"
+                name: "unit"
+                orig: "unit"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/weather"
+          parts: [
+            "weather"
+          ]
+          select: {
+            exist: [
+              "day"
+              "location"
+              "unit"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
