@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/weather-forecast-sdk/core"
+import "github.com/voxgig-sdk/weather-forecast-sdk/go/core"
 
 func init() {
 	core.UtilityRegistrar = registerAll

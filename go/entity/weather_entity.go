@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/weather-forecast-sdk/core"
+	"github.com/voxgig-sdk/weather-forecast-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/weather-forecast-sdk/go/utility/struct"
 )
 
 type WeatherEntity struct {
