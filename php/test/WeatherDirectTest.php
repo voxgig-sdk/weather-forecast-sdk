@@ -68,14 +68,12 @@ function weather_direct_setup($mockres)
     $env = Runner::env_override([
         "WEATHERFORECAST_TEST_WEATHER_ENTID" => [],
         "WEATHERFORECAST_TEST_LIVE" => "FALSE",
-        "WEATHERFORECAST_APIKEY" => "NONE",
     ]);
 
     $live = $env["WEATHERFORECAST_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["WEATHERFORECAST_APIKEY"],
         ];
         $client = new WeatherForecastSDK($merged_opts);
         return [

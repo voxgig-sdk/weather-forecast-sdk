@@ -20,9 +20,6 @@ class WeatherForecastConfig
             ],
             "options" => [
                 "base" => "https://www.baguette-radar.com/api",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
