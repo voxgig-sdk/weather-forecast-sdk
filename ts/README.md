@@ -10,7 +10,7 @@ The TypeScript SDK for the WeatherForecast API — a type-safe, entity-oriented 
 
 ## Install
 ```bash
-npm install weather-forecast
+npm install @voxgig-sdk/weather-forecast
 ```
 ## Tutorial: your first API call
 

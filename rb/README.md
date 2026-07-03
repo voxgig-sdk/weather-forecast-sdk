@@ -10,13 +10,13 @@ The Ruby SDK for the WeatherForecast API — an entity-oriented client using idi
 
 ## Install
 ```bash
-gem install weather-forecast-sdk
+gem install voxgig-sdk-weather-forecast
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "weather-forecast-sdk"
+gem "voxgig-sdk-weather-forecast"
 ```
 
 Then run:

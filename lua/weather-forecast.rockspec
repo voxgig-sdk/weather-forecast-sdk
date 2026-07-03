@@ -8,12 +8,14 @@ source = {
   dir = "weather-forecast-sdk/lua"
 }
 description = {
-  summary = "WeatherForecast SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Weather Forecast public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/weather-forecast-sdk",
+  issues_url = "https://github.com/voxgig-sdk/weather-forecast-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "weather-forecast" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

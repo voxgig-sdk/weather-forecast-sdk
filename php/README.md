@@ -10,7 +10,7 @@ The PHP SDK for the WeatherForecast API — an entity-oriented client using PHP 
 
 ## Install
 ```bash
-composer require voxgig/weather-forecast-sdk
+composer require voxgig-sdk/weather-forecast
 ```
 
 
