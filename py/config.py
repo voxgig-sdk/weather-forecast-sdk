@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://www.baguette-radar.com/api",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -26,82 +29,84 @@ def make_config():
       "weather": {
         "fields": [
           {
+            "active": True,
             "name": "condition",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "date",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "humidity",
             "req": False,
             "type": "`$NUMBER`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "precipitation_chance",
             "req": False,
             "type": "`$NUMBER`",
-            "active": True,
             "index$": 3,
           },
           {
+            "active": True,
             "name": "temperature_high",
             "req": False,
             "type": "`$NUMBER`",
-            "active": True,
             "index$": 4,
           },
           {
+            "active": True,
             "name": "temperature_low",
             "req": False,
             "type": "`$NUMBER`",
-            "active": True,
             "index$": 5,
           },
         ],
         "name": "weather",
         "op": {
           "list": {
+            "input": "data",
             "name": "list",
             "points": [
               {
+                "active": True,
                 "args": {
                   "query": [
                     {
+                      "active": True,
                       "example": 5,
                       "kind": "query",
                       "name": "day",
                       "orig": "day",
                       "reqd": False,
                       "type": "`$INTEGER`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "example": "Paris",
                       "kind": "query",
                       "name": "location",
                       "orig": "location",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "example": "metric",
                       "kind": "query",
                       "name": "unit",
                       "orig": "unit",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -121,11 +126,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "list",
           },
         },

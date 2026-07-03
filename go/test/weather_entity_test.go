@@ -119,6 +119,7 @@ func weatherBasicSetup(extra map[string]any) *entityTestSetup {
 		"WEATHERFORECAST_TEST_WEATHER_ENTID": idmap,
 		"WEATHERFORECAST_TEST_LIVE":      "FALSE",
 		"WEATHERFORECAST_TEST_EXPLAIN":   "FALSE",
+		"WEATHERFORECAST_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["WEATHERFORECAST_TEST_WEATHER_ENTID"])
@@ -129,6 +130,7 @@ func weatherBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["WEATHERFORECAST_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["WEATHERFORECAST_APIKEY"],
 			},
 			extra,
 		})

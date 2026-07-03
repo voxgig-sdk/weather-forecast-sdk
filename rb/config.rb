@@ -15,6 +15,9 @@ module WeatherForecastConfig
       },
       "options" => {
         "base" => "https://www.baguette-radar.com/api",
+        "auth" => {
+          "prefix" => "Bearer",
+        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -26,82 +29,84 @@ module WeatherForecastConfig
         "weather" => {
           "fields" => [
             {
+              "active" => true,
               "name" => "condition",
               "req" => false,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 0,
             },
             {
+              "active" => true,
               "name" => "date",
               "req" => false,
               "type" => "`$STRING`",
-              "active" => true,
               "index$" => 1,
             },
             {
+              "active" => true,
               "name" => "humidity",
               "req" => false,
               "type" => "`$NUMBER`",
-              "active" => true,
               "index$" => 2,
             },
             {
+              "active" => true,
               "name" => "precipitation_chance",
               "req" => false,
               "type" => "`$NUMBER`",
-              "active" => true,
               "index$" => 3,
             },
             {
+              "active" => true,
               "name" => "temperature_high",
               "req" => false,
               "type" => "`$NUMBER`",
-              "active" => true,
               "index$" => 4,
             },
             {
+              "active" => true,
               "name" => "temperature_low",
               "req" => false,
               "type" => "`$NUMBER`",
-              "active" => true,
               "index$" => 5,
             },
           ],
           "name" => "weather",
           "op" => {
             "list" => {
+              "input" => "data",
               "name" => "list",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "query" => [
                       {
+                        "active" => true,
                         "example" => 5,
                         "kind" => "query",
                         "name" => "day",
                         "orig" => "day",
                         "reqd" => false,
                         "type" => "`$INTEGER`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "example" => "Paris",
                         "kind" => "query",
                         "name" => "location",
                         "orig" => "location",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "example" => "metric",
                         "kind" => "query",
                         "name" => "unit",
                         "orig" => "unit",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -121,11 +126,9 @@ module WeatherForecastConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "list",
             },
           },

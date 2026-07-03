@@ -1,20 +1,8 @@
 # WeatherForecast SDK
 
-Fetch real-time temperature, humidity, and forecast data for application integration
+Weather Forecast API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Weather Forecast API
-
-The Weather Forecast API is a meteorological data service published under the `baguette-radar.com` domain and catalogued on [Free Public APIs](https://freepublicapis.com/weather-forecast-api). It is intended for application integration, exposing real-time weather observations and short-term forecasts over HTTP.
-
-What you can expect from the API:
-
-- Real-time temperature readings
-- Humidity values
-- Forecast data for multiple locations
-
-Operational notes: at the time of cataloguing, the upstream service has been reported as intermittently unavailable, so applications should treat responses defensively and implement retries or fallbacks. No authentication scheme, rate limits, or licence terms are documented on the catalogue page.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install weather-forecast-sdk
 luarocks install weather-forecast-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { WeatherForecastSDK } from 'weather-forecast'
 
-const client = new WeatherForecastSDK({})
+const client = new WeatherForecastSDK({
+  apikey: process.env.WEATHER-FORECAST_APIKEY,
+})
 
 // List all weathers
 const weathers = await client.Weather().list()
+console.log(weathers.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Weather** | Real-time meteorological observations and forecast data (temperature, humidity, multi-location forecasts) returned by the API. | `/weather` |
+| **Weather** |  | `/weather` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from weatherforecast_sdk import WeatherForecastSDK
 
-client = WeatherForecastSDK({})
+client = WeatherForecastSDK({
+    "apikey": os.environ.get("WEATHER-FORECAST_APIKEY"),
+})
 
 # List all weathers
-weathers, err = client.Weather(None).list(None, None)
+weathers, err = client.Weather().list()
+print(weathers)
 ```
 
 ### PHP
@@ -124,10 +118,13 @@ weathers, err = client.Weather(None).list(None, None)
 <?php
 require_once 'weatherforecast_sdk.php';
 
-$client = new WeatherForecastSDK([]);
+$client = new WeatherForecastSDK([
+    "apikey" => getenv("WEATHER-FORECAST_APIKEY"),
+]);
 
 // List all weathers
-[$weathers, $err] = $client->Weather(null)->list(null, null);
+[$weathers, $err] = $client->Weather()->list();
+print_r($weathers);
 ```
 
 ### Golang
@@ -135,10 +132,13 @@ $client = new WeatherForecastSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/weather-forecast-sdk/go"
 
-client := sdk.NewWeatherForecastSDK(map[string]any{})
+client := sdk.NewWeatherForecastSDK(map[string]any{
+    "apikey": os.Getenv("WEATHER-FORECAST_APIKEY"),
+})
 
 // List all weathers
 weathers, err := client.Weather(nil).List(nil, nil)
+fmt.Println(weathers)
 ```
 
 ### Ruby
@@ -146,10 +146,13 @@ weathers, err := client.Weather(nil).List(nil, nil)
 ```ruby
 require_relative "WeatherForecast_sdk"
 
-client = WeatherForecastSDK.new({})
+client = WeatherForecastSDK.new({
+  "apikey" => ENV["WEATHER-FORECAST_APIKEY"],
+})
 
 # List all weathers
-weathers, err = client.Weather(nil).list(nil, nil)
+weathers, err = client.Weather().list
+puts weathers
 ```
 
 ### Lua
@@ -157,10 +160,13 @@ weathers, err = client.Weather(nil).list(nil, nil)
 ```lua
 local sdk = require("weather-forecast_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("WEATHER-FORECAST_APIKEY"),
+})
 
 -- List all weathers
-local weathers, err = client:Weather(nil):list(nil, nil)
+local weathers, err = client:Weather():list()
+print(weathers)
 ```
 
 ## Unit testing in offline mode
@@ -179,25 +185,21 @@ const result = await client.Weather().load({ id: 'test01' })
 ### Python
 
 ```python
-client = WeatherForecastSDK.test(None, None)
-result, err = client.Weather(None).load(
-    {"id": "test01"}, None
-)
+client = WeatherForecastSDK.test()
+result, err = client.Weather().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = WeatherForecastSDK::test(null, null);
-[$result, $err] = $client->Weather(null)->load(
-    ["id" => "test01"], null
-);
+$client = WeatherForecastSDK::test();
+[$result, $err] = $client->Weather()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Weather(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -206,19 +208,15 @@ result, err := client.Weather(nil).Load(
 ### Ruby
 
 ```ruby
-client = WeatherForecastSDK.test(nil, nil)
-result, err = client.Weather(nil).load(
-  { "id" => "test01" }, nil
-)
+client = WeatherForecastSDK.test
+result, err = client.Weather().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Weather(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Weather():load({ id = "test01" })
 ```
 
 ## How it works
@@ -322,11 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Weather Forecast API
-
-- Upstream: [https://www.baguette-radar.com/api](https://www.baguette-radar.com/api)
-- API docs: [https://freepublicapis.com/weather-forecast-api](https://freepublicapis.com/weather-forecast-api)
 
 ---
 

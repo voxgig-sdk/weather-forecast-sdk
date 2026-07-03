@@ -16,22 +16,7 @@ main: {
       ]
       title: "Weather Forecast API"
       version: "1.0.0"
-      tagline: "Fetch real-time temperature, humidity, and forecast data for application integration"
-      homepage: "https://www.baguette-radar.com/api"
-      docs_url: "https://freepublicapis.com/weather-forecast-api"
-      about_md: `The Weather Forecast API is a meteorological data service published under the \`baguette-radar.com\` domain and catalogued on [Free Public APIs](https://freepublicapis.com/weather-forecast-api). It is intended for application integration, exposing real-time weather observations and short-term forecasts over HTTP.
-
-What you can expect from the API:
-
-- Real-time temperature readings
-- Humidity values
-- Forecast data for multiple locations
-
-Operational notes: at the time of cataloguing, the upstream service has been reported as intermittently unavailable, so applications should treat responses defensively and implement retries or fallbacks. No authentication scheme, rate limits, or licence terms are documented on the catalogue page.`
-      entity_desc: {
-        weather: "Real-time meteorological observations and forecast data (temperature, humidity, multi-location forecasts) returned by the API."
-      }
-      auth: false
     }
   }
 }
+
