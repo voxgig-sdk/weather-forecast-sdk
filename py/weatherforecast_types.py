@@ -4,29 +4,31 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Weather:
-    condition: Optional[str] = None
-    date: Optional[str] = None
-    humidity: Optional[float] = None
-    precipitation_chance: Optional[float] = None
-    temperature_high: Optional[float] = None
-    temperature_low: Optional[float] = None
+class Weather(TypedDict, total=False):
+    condition: str
+    date: str
+    humidity: float
+    precipitation_chance: float
+    temperature_high: float
+    temperature_low: float
 
 
-@dataclass
-class WeatherListMatch:
-    condition: Optional[str] = None
-    date: Optional[str] = None
-    humidity: Optional[float] = None
-    precipitation_chance: Optional[float] = None
-    temperature_high: Optional[float] = None
-    temperature_low: Optional[float] = None
-
+class WeatherListMatch(TypedDict, total=False):
+    condition: str
+    date: str
+    humidity: float
+    precipitation_chance: float
+    temperature_high: float
+    temperature_low: float

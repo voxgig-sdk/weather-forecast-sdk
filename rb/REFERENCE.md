@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## WeatherEntity
 
 ```ruby
-weather = client.weather
+weather = client.Weather
 ```
 
 ### Fields
@@ -107,7 +107,7 @@ weather = client.weather
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.weather.list(nil)
+results = client.Weather.list(nil)
 ```
 
 ### Common Methods

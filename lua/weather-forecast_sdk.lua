@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:weather():list() / client:weather():load({ id = ... })
-function WeatherForecastSDK:weather(data)
+-- Idiomatic facade: client:Weather():list() / client:Weather():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function WeatherForecastSDK:Weather(data)
   local EntityMod = require("entity.weather_entity")
   if data == nil then
     if self._weather == nil then
@@ -253,12 +254,6 @@ function WeatherForecastSDK:weather(data)
     end
     return self._weather
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:weather() instead.
-function WeatherForecastSDK:Weather(data)
-  local EntityMod = require("entity.weather_entity")
   return EntityMod.new(self, data)
 end
 

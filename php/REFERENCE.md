@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## WeatherEntity
 
 ```php
-$weather = $client->weather();
+$weather = $client->Weather();
 ```
 
 ### Fields
@@ -106,7 +106,7 @@ $weather = $client->weather();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->weather()->list([]);
+$results = $client->Weather()->list([]);
 ```
 
 ### Common Methods
