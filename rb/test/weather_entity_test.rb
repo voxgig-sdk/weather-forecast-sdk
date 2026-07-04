@@ -43,8 +43,7 @@ class WeatherEntityTest < Minitest::Test
     weather_ref01_ent = client.Weather(nil)
     weather_ref01_match = {}
 
-    weather_ref01_list_result, err = weather_ref01_ent.list(weather_ref01_match, nil)
-    assert_nil err
+    weather_ref01_list_result = weather_ref01_ent.list(weather_ref01_match, nil)
     assert weather_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def weather_basic_setup(extra)
     "WEATHERFORECAST_TEST_WEATHER_ENTID" => idmap,
     "WEATHERFORECAST_TEST_LIVE" => "FALSE",
     "WEATHERFORECAST_TEST_EXPLAIN" => "FALSE",
-    "WEATHERFORECAST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def weather_basic_setup(extra)
   if env["WEATHERFORECAST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["WEATHERFORECAST_APIKEY"],
       },
       extra || {},
     ])

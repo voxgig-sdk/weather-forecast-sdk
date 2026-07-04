@@ -50,8 +50,7 @@ class WeatherEntityTest extends TestCase
         $weather_ref01_ent = $client->Weather(null);
         $weather_ref01_match = [];
 
-        [$weather_ref01_list_result, $err] = $weather_ref01_ent->list($weather_ref01_match, null);
-        $this->assertNull($err);
+        $weather_ref01_list_result = $weather_ref01_ent->list($weather_ref01_match, null);
         $this->assertIsArray($weather_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function weather_basic_setup($extra)
         "WEATHERFORECAST_TEST_WEATHER_ENTID" => $idmap,
         "WEATHERFORECAST_TEST_LIVE" => "FALSE",
         "WEATHERFORECAST_TEST_EXPLAIN" => "FALSE",
-        "WEATHERFORECAST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function weather_basic_setup($extra)
     if ($env["WEATHERFORECAST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["WEATHERFORECAST_APIKEY"],
             ],
             $extra ?? [],
         ]);

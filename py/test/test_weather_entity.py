@@ -50,8 +50,7 @@ class TestWeatherEntity:
         weather_ref01_ent = client.Weather(None)
         weather_ref01_match = {}
 
-        weather_ref01_list_result, err = weather_ref01_ent.list(weather_ref01_match, None)
-        assert err is None
+        weather_ref01_list_result = weather_ref01_ent.list(weather_ref01_match, None)
         assert isinstance(weather_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _weather_basic_setup(extra):
         "WEATHERFORECAST_TEST_WEATHER_ENTID": idmap,
         "WEATHERFORECAST_TEST_LIVE": "FALSE",
         "WEATHERFORECAST_TEST_EXPLAIN": "FALSE",
-        "WEATHERFORECAST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _weather_basic_setup(extra):
     if env.get("WEATHERFORECAST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("WEATHERFORECAST_APIKEY"),
             },
             extra or {},
         ])
