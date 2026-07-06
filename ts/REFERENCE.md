@@ -116,12 +116,12 @@ const weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `humidity` | ``$NUMBER`` | No |  |
-| `precipitation_chance` | ``$NUMBER`` | No |  |
-| `temperature_high` | ``$NUMBER`` | No |  |
-| `temperature_low` | ``$NUMBER`` | No |  |
+| `condition` | `string` | No |  |
+| `date` | `string` | No |  |
+| `humidity` | `number` | No |  |
+| `precipitation_chance` | `number` | No |  |
+| `temperature_high` | `number` | No |  |
+| `temperature_low` | `number` | No |  |
 
 ### Operations
 

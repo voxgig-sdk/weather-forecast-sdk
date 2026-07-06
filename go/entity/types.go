@@ -18,8 +18,7 @@ type Weather struct {
 	TemperatureLow *float64 `json:"temperature_low,omitempty"`
 }
 
-// WeatherListMatch mirrors the weather fields as an all-optional match
-// filter (Go analog of Partial<Weather>).
+// WeatherListMatch is the typed request payload for Weather.ListTyped.
 type WeatherListMatch struct {
 	Condition *string `json:"condition,omitempty"`
 	Date *string `json:"date,omitempty"`

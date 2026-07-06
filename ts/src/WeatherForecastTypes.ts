@@ -14,5 +14,12 @@ export interface Weather {
   temperature_low?: number
 }
 
-export type WeatherListMatch = Partial<Weather>
+export interface WeatherListMatch {
+  condition?: string
+  date?: string
+  humidity?: number
+  precipitation_chance?: number
+  temperature_high?: number
+  temperature_low?: number
+}
 

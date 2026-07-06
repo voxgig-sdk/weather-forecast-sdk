@@ -97,12 +97,12 @@ weather := client.Weather(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `humidity` | ``$NUMBER`` | No |  |
-| `precipitation_chance` | ``$NUMBER`` | No |  |
-| `temperature_high` | ``$NUMBER`` | No |  |
-| `temperature_low` | ``$NUMBER`` | No |  |
+| `condition` | `string` | No |  |
+| `date` | `string` | No |  |
+| `humidity` | `float64` | No |  |
+| `precipitation_chance` | `float64` | No |  |
+| `temperature_high` | `float64` | No |  |
+| `temperature_low` | `float64` | No |  |
 
 ### Operations
 

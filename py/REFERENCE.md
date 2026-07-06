@@ -8,7 +8,7 @@ Complete API reference for the WeatherForecast Python SDK.
 ### Constructor
 
 ```python
-from weather-forecast_sdk import WeatherForecastSDK
+from weatherforecast_sdk import WeatherForecastSDK
 
 client = WeatherForecastSDK(options)
 ```
@@ -87,21 +87,21 @@ weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `humidity` | ``$NUMBER`` | No |  |
-| `precipitation_chance` | ``$NUMBER`` | No |  |
-| `temperature_high` | ``$NUMBER`` | No |  |
-| `temperature_low` | ``$NUMBER`` | No |  |
+| `condition` | `str` | No |  |
+| `date` | `str` | No |  |
+| `humidity` | `float` | No |  |
+| `precipitation_chance` | `float` | No |  |
+| `temperature_high` | `float` | No |  |
+| `temperature_low` | `float` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Weather().list({})
+results = client.Weather().list()
 for weather in results:
     print(weather)
 ```

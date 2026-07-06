@@ -23,7 +23,7 @@ class Weather
     public ?float $temperature_low = null;
 }
 
-/** Match filter for Weather#list (any subset of Weather fields). */
+/** Request payload for Weather#list. */
 class WeatherListMatch
 {
     public ?string $condition = null;

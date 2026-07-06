@@ -8,7 +8,7 @@ Complete API reference for the WeatherForecast Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'weather-forecast_sdk'
+require_relative 'WeatherForecast_sdk'
 
 client = WeatherForecastSDK.new(options)
 ```
@@ -93,21 +93,21 @@ weather = client.Weather
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | ``$STRING`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `humidity` | ``$NUMBER`` | No |  |
-| `precipitation_chance` | ``$NUMBER`` | No |  |
-| `temperature_high` | ``$NUMBER`` | No |  |
-| `temperature_low` | ``$NUMBER`` | No |  |
+| `condition` | `String` | No |  |
+| `date` | `String` | No |  |
+| `humidity` | `Float` | No |  |
+| `precipitation_chance` | `Float` | No |  |
+| `temperature_high` | `Float` | No |  |
+| `temperature_low` | `Float` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Weather.list(nil)
+results = client.Weather.list
 ```
 
 ### Common Methods

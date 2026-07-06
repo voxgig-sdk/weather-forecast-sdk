@@ -15,6 +15,12 @@
 ---@field temperature_low? number
 
 ---@class WeatherListMatch
+---@field condition? string
+---@field date? string
+---@field humidity? number
+---@field precipitation_chance? number
+---@field temperature_high? number
+---@field temperature_low? number
 
 local M = {}
 
