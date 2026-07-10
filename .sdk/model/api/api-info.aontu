@@ -15,9 +15,9 @@ main: {
           url: "https://www.baguette-radar.com/api"
         }
       ]
+      summary: "This API provides real-time weather data, including temperature, humidity, and forecasts for various locations."
       title: "Weather Forecast API"
       version: "1.0.0"
+      website: "https://baguette-radar.com"
     }
   }
-}
-

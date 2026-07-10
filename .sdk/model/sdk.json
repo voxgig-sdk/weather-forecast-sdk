@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -256,14 +253,17 @@
           "url": "https://www.baguette-radar.com/"
         },
         "description": "This API provides real-time weather data, including temperature, humidity, and forecasts for various locations. Users can access detailed meteorological information to integrate into their applications.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://www.baguette-radar.com/api"
           }
         ],
+        "summary": "This API provides real-time weather data, including temperature, humidity, and forecasts for various locations.",
         "title": "Weather Forecast API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://baguette-radar.com"
       },
       "option": {},
       "target": {
@@ -316,6 +316,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -366,6 +369,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
