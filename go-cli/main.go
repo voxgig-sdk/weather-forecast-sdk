@@ -27,7 +27,20 @@ func main() {
 }
 
 func run(args []string, in io.Reader, out, errOut io.Writer) int {
-	client := sdk.NewWeatherForecastSDK(nil)
+	// Configure from the environment: WEATHER_FORECAST_APIKEY carries the API key and
+	// WEATHER_FORECAST_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("WEATHER_FORECAST_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("WEATHER_FORECAST_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewWeatherForecastSDK(opts)
 
 	r, err := eng.NewRegistry()
 	if err != nil {
