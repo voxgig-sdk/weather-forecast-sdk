@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- WeatherForecast SDK configuration
 
 local function make_config()
   return {
