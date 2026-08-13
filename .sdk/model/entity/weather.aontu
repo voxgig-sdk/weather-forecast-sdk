@@ -6,7 +6,7 @@ main: kit: entity: weather: {
 
   fields: [
     {
-      name: "condition"
+      name: "conditions"
       req: false
       type: "`$STRING`"
     }

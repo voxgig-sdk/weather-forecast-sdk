@@ -7,7 +7,7 @@
 -- edit by hand.
 
 ---@class Weather
----@field condition? string
+---@field conditions? string
 ---@field date? string
 ---@field humidity? number
 ---@field precipitation_chance? number
@@ -15,7 +15,7 @@
 ---@field temperature_low? number
 
 ---@class WeatherListMatch
----@field condition? string
+---@field conditions? string
 ---@field date? string
 ---@field humidity? number
 ---@field precipitation_chance? number

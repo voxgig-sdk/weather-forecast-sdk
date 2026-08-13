@@ -98,7 +98,7 @@ fmt.Println(weather.GetName()) // "weather"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `string` | No |  |
+| `conditions` | `string` | No |  |
 | `date` | `string` | No |  |
 | `humidity` | `float64` | No |  |
 | `precipitation_chance` | `float64` | No |  |

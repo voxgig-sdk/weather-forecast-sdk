@@ -27,7 +27,7 @@ module WeatherForecastConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "condition",
+              "name" => "conditions",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 0,
@@ -107,6 +107,7 @@ module WeatherForecastConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/weather",
                   "parts" => [

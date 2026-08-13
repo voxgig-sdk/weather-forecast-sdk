@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from weatherforecast_sdk.utility.voxgig_struct import voxgig_struct as vs
 from weatherforecast_sdk import WeatherForecastSDK
-from core import helpers
+from weatherforecast_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _weather_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "WEATHERFORECAST_TEST_WEATHER_ENTID": {},
-        "WEATHERFORECAST_TEST_LIVE": "FALSE",
+        "WEATHER_FORECAST_TEST_WEATHER_ENTID": {},
+        "WEATHER_FORECAST_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("WEATHERFORECAST_TEST_LIVE") == "TRUE"
+    live = env.get("WEATHER_FORECAST_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

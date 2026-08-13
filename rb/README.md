@@ -37,7 +37,7 @@ begin
   # list returns an Array of Weather records — iterate directly.
   weathers = client.Weather.list
   weathers.each do |item|
-    puts "#{item["condition"]}"
+    puts "#{item["conditions"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = WeatherForecastSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 weather = client.Weather.list()
 puts weather
 ```
@@ -236,7 +237,7 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `condition` |  |
+| `conditions` |  |
 | `date` |  |
 | `humidity` |  |
 | `precipitation_chance` |  |
@@ -266,7 +267,7 @@ Create an instance: `weather = client.Weather`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `condition` | `String` |  |
+| `conditions` | `String` |  |
 | `date` | `String` |  |
 | `humidity` | `Float` |  |
 | `precipitation_chance` | `Float` |  |

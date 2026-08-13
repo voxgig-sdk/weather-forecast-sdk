@@ -2,7 +2,7 @@
   "existing": {
     "weather": {
       "WEATHER00": {
-        "condition": "s3c",
+        "conditions": "s3c",
         "date": "s3d",
         "humidity": 62,
         "precipitation_chance": 63,
@@ -10,7 +10,7 @@
         "temperature_low": 65
       },
       "WEATHER01": {
-        "condition": "s78",
+        "conditions": "s78",
         "date": "s79",
         "humidity": 122,
         "precipitation_chance": 123,
@@ -18,7 +18,7 @@
         "temperature_low": 125
       },
       "WEATHER02": {
-        "condition": "sb4",
+        "conditions": "sb4",
         "date": "sb5",
         "humidity": 182,
         "precipitation_chance": 183,
@@ -30,7 +30,7 @@
   "new": {
     "weather": {
       "weather_ref01": {
-        "condition": "sf0",
+        "conditions": "sf0",
         "date": "sf1",
         "humidity": 242,
         "precipitation_chance": 243,

@@ -16,11 +16,11 @@
 import pytest
 
 from weatherforecast_sdk import WeatherForecastSDK
-from core.error import WeatherForecastError
-from core.result import WeatherForecastResult
-from core.response import WeatherForecastResponse
-from core.spec import WeatherForecastSpec
-from feature.base_feature import WeatherForecastBaseFeature
+from weatherforecast_sdk.core.error import WeatherForecastError
+from weatherforecast_sdk.core.result import WeatherForecastResult
+from weatherforecast_sdk.core.response import WeatherForecastResponse
+from weatherforecast_sdk.core.spec import WeatherForecastSpec
+from weatherforecast_sdk.feature.base_feature import WeatherForecastBaseFeature
 
 
 def _client():

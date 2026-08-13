@@ -61,11 +61,11 @@ function weather_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["WEATHERFORECAST_TEST_WEATHER_ENTID"] = {},
-    ["WEATHERFORECAST_TEST_LIVE"] = "FALSE",
+    ["WEATHER_FORECAST_TEST_WEATHER_ENTID"] = {},
+    ["WEATHER_FORECAST_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["WEATHERFORECAST_TEST_LIVE"] == "TRUE"
+  local live = env["WEATHER_FORECAST_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

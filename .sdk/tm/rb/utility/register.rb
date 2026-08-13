@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ WeatherForecastUtility.registrar = ->(u) {
   u.prepare_params = WeatherForecastUtilities::PrepareParams
   u.prepare_path = WeatherForecastUtilities::PreparePath
   u.prepare_query = WeatherForecastUtilities::PrepareQuery
+  u.graphql_body = WeatherForecastUtilities::GraphqlBody
+  u.graphql_errors = WeatherForecastUtilities::GraphqlErrors
   u.result_basic = WeatherForecastUtilities::ResultBasic
   u.result_body = WeatherForecastUtilities::ResultBody
   u.result_headers = WeatherForecastUtilities::ResultHeaders

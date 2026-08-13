@@ -116,7 +116,7 @@ const weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `string` | No |  |
+| `conditions` | `string` | No |  |
 | `date` | `string` | No |  |
 | `humidity` | `number` | No |  |
 | `precipitation_chance` | `number` | No |  |

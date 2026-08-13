@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'WeatherForecast',
   }
 
 
@@ -56,7 +56,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "condition",
+          "name": "conditions",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -136,6 +136,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/weather",
               "parts": [

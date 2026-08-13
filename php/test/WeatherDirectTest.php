@@ -66,11 +66,11 @@ function weather_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "WEATHERFORECAST_TEST_WEATHER_ENTID" => [],
-        "WEATHERFORECAST_TEST_LIVE" => "FALSE",
+        "WEATHER_FORECAST_TEST_WEATHER_ENTID" => [],
+        "WEATHER_FORECAST_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["WEATHERFORECAST_TEST_LIVE"] === "TRUE";
+    $live = $env["WEATHER_FORECAST_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

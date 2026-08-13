@@ -43,7 +43,7 @@ local weathers, err = client:Weather():list()
 if err then error(err) end
 
 for _, item in ipairs(weathers) do
-  print(item["condition"])
+  print(item["conditions"])
 end
 ```
 
@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local weather, err = client:Weather():load()
+    local weather, err = client:Weather():list()
     if err then error(err) end
-    -- weather is the loaded record
+    -- weather is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -231,7 +231,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `condition` |  |
+| `conditions` |  |
 | `date` |  |
 | `humidity` |  |
 | `precipitation_chance` |  |
@@ -261,7 +261,7 @@ Create an instance: `local weather = client:Weather(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `condition` | `string` |  |
+| `conditions` | `string` |  |
 | `date` | `string` |  |
 | `humidity` | `number` |  |
 | `precipitation_chance` | `number` |  |

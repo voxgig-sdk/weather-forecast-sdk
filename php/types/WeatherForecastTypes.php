@@ -15,7 +15,7 @@ declare(strict_types=1);
 /** Weather entity data model. */
 class Weather
 {
-    public ?string $condition = null;
+    public ?string $conditions = null;
     public ?string $date = null;
     public ?float $humidity = null;
     public ?float $precipitation_chance = null;
@@ -26,7 +26,7 @@ class Weather
 /** Request payload for Weather#list. */
 class WeatherListMatch
 {
-    public ?string $condition = null;
+    public ?string $conditions = null;
     public ?string $date = null;
     public ?float $humidity = null;
     public ?float $precipitation_chance = null;

@@ -6,7 +6,7 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Weather {
-  condition?: string
+  conditions?: string
   date?: string
   humidity?: number
   precipitation_chance?: number
@@ -15,7 +15,7 @@ export interface Weather {
 }
 
 export interface WeatherListMatch {
-  condition?: string
+  conditions?: string
   date?: string
   humidity?: number
   precipitation_chance?: number

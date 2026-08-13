@@ -260,7 +260,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"condition"` |  |
+| `"conditions"` |  |
 | `"date"` |  |
 | `"humidity"` |  |
 | `"precipitation_chance"` |  |
@@ -290,7 +290,7 @@ Create an instance: `weather := client.Weather(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `condition` | `string` |  |
+| `conditions` | `string` |  |
 | `date` | `string` |  |
 | `humidity` | `float64` |  |
 | `precipitation_chance` | `float64` |  |

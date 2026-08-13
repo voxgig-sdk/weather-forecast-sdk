@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = WeatherForecastSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = WeatherForecastSDK.test({
+  entity: {
+    weather: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const weathers = await client.Weather().list()
-// weathers is an array of bare Weather records populated with mock data
+// weathers is an array of Weather entities, populated with mock data
+// — call weathers[0].data() for the record itself
 console.log(weathers)
 ```
 
@@ -110,7 +119,7 @@ import { WeatherForecastSDK } from '@voxgig-sdk/weather-forecast'
 
 const client = new WeatherForecastSDK()
 
-// List all weathers (returns Weather[])
+// List all weathers (returns WeatherEntity[] — .data() for the record)
 const weathers = await client.Weather().list()
 for (const weather of weathers) {
   console.log(weather)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.baguette-radar.com/](https://www.baguette-radar.com/)
 

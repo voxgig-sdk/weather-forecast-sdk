@@ -10,7 +10,7 @@
 
 # Weather entity data model.
 #
-# @!attribute [rw] condition
+# @!attribute [rw] conditions
 #   @return [String, nil]
 #
 # @!attribute [rw] date
@@ -28,7 +28,7 @@
 # @!attribute [rw] temperature_low
 #   @return [Float, nil]
 Weather = Struct.new(
-  :condition,
+  :conditions,
   :date,
   :humidity,
   :precipitation_chance,
@@ -39,7 +39,7 @@ Weather = Struct.new(
 
 # Request payload for Weather#list.
 #
-# @!attribute [rw] condition
+# @!attribute [rw] conditions
 #   @return [String, nil]
 #
 # @!attribute [rw] date
@@ -57,7 +57,7 @@ Weather = Struct.new(
 # @!attribute [rw] temperature_low
 #   @return [Float, nil]
 WeatherListMatch = Struct.new(
-  :condition,
+  :conditions,
   :date,
   :humidity,
   :precipitation_chance,

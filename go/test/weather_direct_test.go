@@ -36,9 +36,10 @@ func TestWeatherDirect(t *testing.T) {
 			"params": map[string]any{},
 		})
 		if setup.live {
-			// Live mode is lenient: synthetic IDs frequently 4xx and the
-			// list-response shape varies wildly across public APIs. Skip
-			// rather than fail when the call doesn't return a usable list.
+			// Live-mode leniency is a model decision
+			// (main.kit.test.live.strict): synthetic IDs 4xx constantly
+			// against an arbitrary public API, so the default SKIPS here.
+			// A project that owns its test server sets strict and FAILS.
 			if err != nil {
 				t.Skipf("list call failed (likely synthetic IDs against live API): %v", err)
 			}
@@ -91,11 +92,11 @@ func weatherDirectSetup(mockres any) *weatherDirectSetupResult {
 	calls := &[]map[string]any{}
 
 	env := envOverride(map[string]any{
-		"WEATHERFORECAST_TEST_WEATHER_ENTID": map[string]any{},
-		"WEATHERFORECAST_TEST_LIVE":    "FALSE",
+		"WEATHER_FORECAST_TEST_WEATHER_ENTID": map[string]any{},
+		"WEATHER_FORECAST_TEST_LIVE":    "FALSE",
 	})
 
-	live := env["WEATHERFORECAST_TEST_LIVE"] == "TRUE"
+	live := env["WEATHER_FORECAST_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
@@ -103,7 +104,7 @@ func weatherDirectSetup(mockres any) *weatherDirectSetupResult {
 		client := sdk.NewWeatherForecastSDK(mergedOpts)
 
 		idmap := map[string]any{}
-		if entidRaw, ok := env["WEATHERFORECAST_TEST_WEATHER_ENTID"]; ok {
+		if entidRaw, ok := env["WEATHER_FORECAST_TEST_WEATHER_ENTID"]; ok {
 			if entidStr, ok := entidRaw.(string); ok && strings.HasPrefix(entidStr, "{") {
 				json.Unmarshal([]byte(entidStr), &idmap)
 			} else if entidMap, ok := entidRaw.(map[string]any); ok {

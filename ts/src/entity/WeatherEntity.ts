@@ -37,7 +37,7 @@ class WeatherEntity extends WeatherForecastEntityBase<Weather> {
 
 
 
-  async list(this: any, reqmatch?: WeatherListMatch, ctrl?: Control): Promise<Weather[]> {
+  async list(this: any, reqmatch?: WeatherListMatch, ctrl?: Control): Promise<WeatherEntity[]> {
 
     const utility = this._utility
 

@@ -87,7 +87,7 @@ weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `condition` | `str` | No |  |
+| `conditions` | `str` | No |  |
 | `date` | `str` | No |  |
 | `humidity` | `float` | No |  |
 | `precipitation_chance` | `float` | No |  |
