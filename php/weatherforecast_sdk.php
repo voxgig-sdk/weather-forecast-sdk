@@ -40,7 +40,7 @@ class WeatherForecastSDK
         $utility = new WeatherForecastUtility();
         $this->_utility = $utility;
 
-        $config = WeatherForecastConfig::make_config();
+        $config = WeatherForecastConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
