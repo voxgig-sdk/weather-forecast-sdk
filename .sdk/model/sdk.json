@@ -36,36 +36,42 @@
               "active": true,
               "name": "conditions",
               "req": false,
+              "short": "Expected weather conditions",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "date",
               "req": false,
+              "short": "Forecast date",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "humidity",
               "req": false,
+              "short": "Average humidity percentage",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "precipitation_chance",
               "req": false,
+              "short": "Probability of precipitation (0-100)",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "temperature_high",
               "req": false,
+              "short": "High temperature for the day",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "temperature_low",
               "req": false,
+              "short": "Low temperature for the day",
               "type": "`$NUMBER`"
             }
           ],

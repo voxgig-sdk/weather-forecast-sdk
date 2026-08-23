@@ -8,31 +8,37 @@ main: kit: entity: weather: {
     {
       name: "conditions"
       req: false
+      short: "Expected weather conditions"
       type: "`$STRING`"
     }
     {
       name: "date"
       req: false
+      short: "Forecast date"
       type: "`$STRING`"
     }
     {
       name: "humidity"
       req: false
+      short: "Average humidity percentage"
       type: "`$NUMBER`"
     }
     {
       name: "precipitation_chance"
       req: false
+      short: "Probability of precipitation (0-100)"
       type: "`$NUMBER`"
     }
     {
       name: "temperature_high"
       req: false
+      short: "High temperature for the day"
       type: "`$NUMBER`"
     }
     {
       name: "temperature_low"
       req: false
+      short: "Low temperature for the day"
       type: "`$NUMBER`"
     }
   ]

@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "WeatherForecast",
+            "slug": "weather-forecast",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,26 +53,32 @@ def make_config():
         "fields": [
           {
             "name": "conditions",
+            "short": "Expected weather conditions",
             "type": "`$STRING`",
           },
           {
             "name": "date",
+            "short": "Forecast date",
             "type": "`$STRING`",
           },
           {
             "name": "humidity",
+            "short": "Average humidity percentage",
             "type": "`$NUMBER`",
           },
           {
             "name": "precipitation_chance",
+            "short": "Probability of precipitation (0-100)",
             "type": "`$NUMBER`",
           },
           {
             "name": "temperature_high",
+            "short": "High temperature for the day",
             "type": "`$NUMBER`",
           },
           {
             "name": "temperature_low",
+            "short": "Low temperature for the day",
             "type": "`$NUMBER`",
           },
         ],

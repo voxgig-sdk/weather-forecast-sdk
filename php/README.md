@@ -247,12 +247,12 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `date` |  |
-| `humidity` |  |
-| `precipitation_chance` |  |
-| `temperature_high` |  |
-| `temperature_low` |  |
+| `conditions` | Expected weather conditions |
+| `date` | Forecast date |
+| `humidity` | Average humidity percentage |
+| `precipitation_chance` | Probability of precipitation (0-100) |
+| `temperature_high` | High temperature for the day |
+| `temperature_low` | Low temperature for the day |
 
 Operations: List.
 
@@ -277,12 +277,12 @@ Create an instance: `$weather = $client->Weather();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `string` |  |
-| `date` | `string` |  |
-| `humidity` | `float` |  |
-| `precipitation_chance` | `float` |  |
-| `temperature_high` | `float` |  |
-| `temperature_low` | `float` |  |
+| `conditions` | `string` | Expected weather conditions |
+| `date` | `string` | Forecast date |
+| `humidity` | `float` | Average humidity percentage |
+| `precipitation_chance` | `float` | Probability of precipitation (0-100) |
+| `temperature_high` | `float` | High temperature for the day |
+| `temperature_low` | `float` | Low temperature for the day |
 
 #### Example: List
 

@@ -98,12 +98,12 @@ fmt.Println(weather.GetName()) // "weather"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `conditions` | `string` | No |  |
-| `date` | `string` | No |  |
-| `humidity` | `float64` | No |  |
-| `precipitation_chance` | `float64` | No |  |
-| `temperature_high` | `float64` | No |  |
-| `temperature_low` | `float64` | No |  |
+| `conditions` | `string` | No | Expected weather conditions |
+| `date` | `string` | No | Forecast date |
+| `humidity` | `float64` | No | Average humidity percentage |
+| `precipitation_chance` | `float64` | No | Probability of precipitation (0-100) |
+| `temperature_high` | `float64` | No | High temperature for the day |
+| `temperature_low` | `float64` | No | Low temperature for the day |
 
 ### Operations
 

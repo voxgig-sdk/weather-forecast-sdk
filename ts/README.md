@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,12 +287,12 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `date` |  |
-| `humidity` |  |
-| `precipitation_chance` |  |
-| `temperature_high` |  |
-| `temperature_low` |  |
+| `conditions` | Expected weather conditions |
+| `date` | Forecast date |
+| `humidity` | Average humidity percentage |
+| `precipitation_chance` | Probability of precipitation (0-100) |
+| `temperature_high` | High temperature for the day |
+| `temperature_low` | Low temperature for the day |
 
 Operations: list.
 
@@ -317,12 +317,12 @@ Create an instance: `const weather = client.Weather()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `string` |  |
-| `date` | `string` |  |
-| `humidity` | `number` |  |
-| `precipitation_chance` | `number` |  |
-| `temperature_high` | `number` |  |
-| `temperature_low` | `number` |  |
+| `conditions` | `string` | Expected weather conditions |
+| `date` | `string` | Forecast date |
+| `humidity` | `number` | Average humidity percentage |
+| `precipitation_chance` | `number` | Probability of precipitation (0-100) |
+| `temperature_high` | `number` | High temperature for the day |
+| `temperature_low` | `number` | Low temperature for the day |
 
 #### Example: List
 

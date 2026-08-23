@@ -90,12 +90,12 @@ local weather = client:Weather(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `conditions` | `string` | No |  |
-| `date` | `string` | No |  |
-| `humidity` | `number` | No |  |
-| `precipitation_chance` | `number` | No |  |
-| `temperature_high` | `number` | No |  |
-| `temperature_low` | `number` | No |  |
+| `conditions` | `string` | No | Expected weather conditions |
+| `date` | `string` | No | Forecast date |
+| `humidity` | `number` | No | Average humidity percentage |
+| `precipitation_chance` | `number` | No | Probability of precipitation (0-100) |
+| `temperature_high` | `number` | No | High temperature for the day |
+| `temperature_low` | `number` | No | Low temperature for the day |
 
 ### Operations
 

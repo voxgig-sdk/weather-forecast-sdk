@@ -237,12 +237,12 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `conditions` |  |
-| `date` |  |
-| `humidity` |  |
-| `precipitation_chance` |  |
-| `temperature_high` |  |
-| `temperature_low` |  |
+| `conditions` | Expected weather conditions |
+| `date` | Forecast date |
+| `humidity` | Average humidity percentage |
+| `precipitation_chance` | Probability of precipitation (0-100) |
+| `temperature_high` | High temperature for the day |
+| `temperature_low` | Low temperature for the day |
 
 Operations: List.
 
@@ -267,12 +267,12 @@ Create an instance: `weather = client.Weather`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `String` |  |
-| `date` | `String` |  |
-| `humidity` | `Float` |  |
-| `precipitation_chance` | `Float` |  |
-| `temperature_high` | `Float` |  |
-| `temperature_low` | `Float` |  |
+| `conditions` | `String` | Expected weather conditions |
+| `date` | `String` | Forecast date |
+| `humidity` | `Float` | Average humidity percentage |
+| `precipitation_chance` | `Float` | Probability of precipitation (0-100) |
+| `temperature_high` | `Float` | High temperature for the day |
+| `temperature_low` | `Float` | Low temperature for the day |
 
 #### Example: List
 

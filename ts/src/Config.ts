@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'WeatherForecast',
+        slug: "weather-forecast",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,26 +67,32 @@ class Config {
       "fields": [
         {
           "name": "conditions",
+          "short": "Expected weather conditions",
           "type": "`$STRING`"
         },
         {
           "name": "date",
+          "short": "Forecast date",
           "type": "`$STRING`"
         },
         {
           "name": "humidity",
+          "short": "Average humidity percentage",
           "type": "`$NUMBER`"
         },
         {
           "name": "precipitation_chance",
+          "short": "Probability of precipitation (0-100)",
           "type": "`$NUMBER`"
         },
         {
           "name": "temperature_high",
+          "short": "High temperature for the day",
           "type": "`$NUMBER`"
         },
         {
           "name": "temperature_low",
+          "short": "Low temperature for the day",
           "type": "`$NUMBER`"
         }
       ],

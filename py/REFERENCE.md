@@ -87,12 +87,12 @@ weather = client.Weather()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `conditions` | `str` | No |  |
-| `date` | `str` | No |  |
-| `humidity` | `float` | No |  |
-| `precipitation_chance` | `float` | No |  |
-| `temperature_high` | `float` | No |  |
-| `temperature_low` | `float` | No |  |
+| `conditions` | `str` | No | Expected weather conditions |
+| `date` | `str` | No | Forecast date |
+| `humidity` | `float` | No | Average humidity percentage |
+| `precipitation_chance` | `float` | No | Probability of precipitation (0-100) |
+| `temperature_high` | `float` | No | High temperature for the day |
+| `temperature_low` | `float` | No | Low temperature for the day |
 
 ### Operations
 

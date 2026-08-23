@@ -6,7 +6,7 @@ The Golang SDK for the WeatherForecast API — an entity-oriented client using s
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Weather(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,12 +260,12 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"conditions"` |  |
-| `"date"` |  |
-| `"humidity"` |  |
-| `"precipitation_chance"` |  |
-| `"temperature_high"` |  |
-| `"temperature_low"` |  |
+| `"conditions"` | Expected weather conditions |
+| `"date"` | Forecast date |
+| `"humidity"` | Average humidity percentage |
+| `"precipitation_chance"` | Probability of precipitation (0-100) |
+| `"temperature_high"` | High temperature for the day |
+| `"temperature_low"` | Low temperature for the day |
 
 Operations: List.
 
@@ -290,12 +290,12 @@ Create an instance: `weather := client.Weather(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `conditions` | `string` |  |
-| `date` | `string` |  |
-| `humidity` | `float64` |  |
-| `precipitation_chance` | `float64` |  |
-| `temperature_high` | `float64` |  |
-| `temperature_low` | `float64` |  |
+| `conditions` | `string` | Expected weather conditions |
+| `date` | `string` | Forecast date |
+| `humidity` | `float64` | Average humidity percentage |
+| `precipitation_chance` | `float64` | Probability of precipitation (0-100) |
+| `temperature_high` | `float64` | High temperature for the day |
+| `temperature_low` | `float64` | Low temperature for the day |
 
 #### Example: List
 
