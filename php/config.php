@@ -42,6 +42,7 @@ class WeatherForecastConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
