@@ -39,30 +39,18 @@ Weather = Struct.new(
 
 # Request payload for Weather#list.
 #
-# @!attribute [rw] conditions
+# @!attribute [rw] day
+#   @return [Integer, nil]
+#
+# @!attribute [rw] location
+#   @return [String]
+#
+# @!attribute [rw] unit
 #   @return [String, nil]
-#
-# @!attribute [rw] date
-#   @return [String, nil]
-#
-# @!attribute [rw] humidity
-#   @return [Float, nil]
-#
-# @!attribute [rw] precipitation_chance
-#   @return [Float, nil]
-#
-# @!attribute [rw] temperature_high
-#   @return [Float, nil]
-#
-# @!attribute [rw] temperature_low
-#   @return [Float, nil]
 WeatherListMatch = Struct.new(
-  :conditions,
-  :date,
-  :humidity,
-  :precipitation_chance,
-  :temperature_high,
-  :temperature_low,
+  :day,
+  :location,
+  :unit,
   keyword_init: true
 )
 

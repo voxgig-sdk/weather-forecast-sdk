@@ -24,12 +24,9 @@ type Weather struct {
 
 // WeatherListMatch is the typed request payload for Weather.ListTyped.
 type WeatherListMatch struct {
-	Conditions *string `json:"conditions,omitempty"`
-	Date *string `json:"date,omitempty"`
-	Humidity *float64 `json:"humidity,omitempty"`
-	PrecipitationChance *float64 `json:"precipitation_chance,omitempty"`
-	TemperatureHigh *float64 `json:"temperature_high,omitempty"`
-	TemperatureLow *float64 `json:"temperature_low,omitempty"`
+	Day *int `json:"day,omitempty"`
+	Location string `json:"location"`
+	Unit *string `json:"unit,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

@@ -15,11 +15,8 @@ export interface Weather {
 }
 
 export interface WeatherListMatch {
-  conditions?: string
-  date?: string
-  humidity?: number
-  precipitation_chance?: number
-  temperature_high?: number
-  temperature_low?: number
+  day?: number
+  location: string
+  unit?: string
 }
 

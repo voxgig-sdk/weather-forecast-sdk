@@ -25,10 +25,10 @@ class Weather(TypedDict, total=False):
     temperature_low: float
 
 
-class WeatherListMatch(TypedDict, total=False):
-    conditions: str
-    date: str
-    humidity: float
-    precipitation_chance: float
-    temperature_high: float
-    temperature_low: float
+class WeatherListMatchRequired(TypedDict):
+    location: str
+
+
+class WeatherListMatch(WeatherListMatchRequired, total=False):
+    day: int
+    unit: str

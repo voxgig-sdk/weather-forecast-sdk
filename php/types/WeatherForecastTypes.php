@@ -26,11 +26,8 @@ class Weather
 /** Request payload for Weather#list. */
 class WeatherListMatch
 {
-    public ?string $conditions = null;
-    public ?string $date = null;
-    public ?float $humidity = null;
-    public ?float $precipitation_chance = null;
-    public ?float $temperature_high = null;
-    public ?float $temperature_low = null;
+    public ?int $day = null;
+    public string $location;
+    public ?string $unit = null;
 }
 
