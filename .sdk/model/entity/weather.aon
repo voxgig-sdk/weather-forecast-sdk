@@ -12,30 +12,35 @@ main: kit: entity: weather: {
       type: "`$STRING`"
     }
     {
+      format: "date"
       name: "date"
       req: false
       short: "Forecast date"
       type: "`$STRING`"
     }
     {
+      format: "double"
       name: "humidity"
       req: false
       short: "Average humidity percentage"
       type: "`$NUMBER`"
     }
     {
+      format: "double"
       name: "precipitation_chance"
       req: false
       short: "Probability of precipitation (0-100)"
       type: "`$NUMBER`"
     }
     {
+      format: "double"
       name: "temperature_high"
       req: false
       short: "High temperature for the day"
       type: "`$NUMBER`"
     }
     {
+      format: "double"
       name: "temperature_low"
       req: false
       short: "Low temperature for the day"
@@ -79,8 +84,10 @@ main: kit: entity: weather: {
           }
           method: "GET"
           orig: "/weather"
-          parts: [
-            "weather"
+          segments: [
+            {
+              lit: "weather"
+            }
           ]
           select: {
             exist: [

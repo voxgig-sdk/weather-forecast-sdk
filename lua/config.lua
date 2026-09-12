@@ -37,26 +37,31 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date",
             ["name"] = "date",
             ["short"] = "Forecast date",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "double",
             ["name"] = "humidity",
             ["short"] = "Average humidity percentage",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "double",
             ["name"] = "precipitation_chance",
             ["short"] = "Probability of precipitation (0-100)",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "double",
             ["name"] = "temperature_high",
             ["short"] = "High temperature for the day",
             ["type"] = "`$NUMBER`",
           },
           {
+            ["format"] = "double",
             ["name"] = "temperature_low",
             ["short"] = "Low temperature for the day",
             ["type"] = "`$NUMBER`",
@@ -98,8 +103,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/weather",
-                ["parts"] = {
-                  "weather",
+                ["segments"] = {
+                  {
+                    ["lit"] = "weather",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -111,6 +118,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "weather",
                 },
               },
             },

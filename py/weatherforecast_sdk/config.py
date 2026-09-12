@@ -1,6 +1,14 @@
 # WeatherForecast SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -58,26 +66,31 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date",
             "name": "date",
             "short": "Forecast date",
             "type": "`$STRING`",
           },
           {
+            "format": "double",
             "name": "humidity",
             "short": "Average humidity percentage",
             "type": "`$NUMBER`",
           },
           {
+            "format": "double",
             "name": "precipitation_chance",
             "short": "Probability of precipitation (0-100)",
             "type": "`$NUMBER`",
           },
           {
+            "format": "double",
             "name": "temperature_high",
             "short": "High temperature for the day",
             "type": "`$NUMBER`",
           },
           {
+            "format": "double",
             "name": "temperature_low",
             "short": "Low temperature for the day",
             "type": "`$NUMBER`",
@@ -119,8 +132,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/weather",
-                "parts": [
-                  "weather",
+                "segments": [
+                  {
+                    "lit": "weather",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -133,6 +148,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "weather",
+                ],
               },
             ],
           },
