@@ -105,7 +105,7 @@ local results, err = client:Weather():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
+| TypeScript | `@voxgig-sdk/weather-forecast-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
 | Python | `voxgig-sdk-weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
 | PHP | `voxgig-sdk/weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/weather-forecast-sdk/go` | `go get github.com/voxgig-sdk/weather-forecast-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Weather():list()
 ### TypeScript
 
 ```ts
-import { WeatherForecastSDK } from '@voxgig-sdk/weather-forecast'
+import { WeatherForecastSDK } from '@voxgig-sdk/weather-forecast-sdk'
 
 const client = new WeatherForecastSDK()
 
