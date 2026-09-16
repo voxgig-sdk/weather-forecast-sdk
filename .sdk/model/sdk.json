@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "weather": {
           "active": true,
@@ -119,6 +183,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /weather",
+                    "json": "{\"operationId\":\"getWeatherForecast\",\"parameters\":[{\"description\":\"Location name (city, address, or coordinates)\",\"example\":\"Paris\",\"in\":\"query\",\"name\":\"location\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"Units of measurement (metric or imperial)\",\"in\":\"query\",\"name\":\"units\",\"required\":false,\"schema\":{\"default\":\"metric\",\"enum\":[\"metric\",\"imperial\"],\"type\":\"string\"}},{\"description\":\"Number of forecast days to retrieve\",\"in\":\"query\",\"name\":\"days\",\"required\":false,\"schema\":{\"default\":5,\"maximum\":7,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"current\":{\"conditions\":\"Partly Cloudy\",\"humidity\":65,\"pressure\":1013.25,\"temperature\":22.5,\"timestamp\":\"2024-01-15T14:30:00Z\",\"wind_speed\":15.3},\"forecast\":[{\"conditions\":\"Sunny\",\"date\":\"2024-01-16\",\"humidity\":70,\"precipitation_chance\":10,\"temperature_high\":24,\"temperature_low\":18},{\"conditions\":\"Rainy\",\"date\":\"2024-01-17\",\"humidity\":75,\"precipitation_chance\":80,\"temperature_high\":21,\"temperature_low\":16}],\"location\":{\"country\":\"FR\",\"latitude\":48.8566,\"longitude\":2.3522,\"name\":\"Paris\"}},\"schema\":{\"properties\":{\"current\":{\"properties\":{\"conditions\":{\"description\":\"Current weather conditions\",\"type\":\"string\"},\"humidity\":{\"description\":\"Current humidity percentage\",\"format\":\"double\",\"type\":\"number\"},\"pressure\":{\"description\":\"Atmospheric pressure\",\"format\":\"double\",\"type\":\"number\"},\"temperature\":{\"description\":\"Current temperature\",\"format\":\"double\",\"type\":\"number\"},\"timestamp\":{\"description\":\"Timestamp of the weather data\",\"format\":\"date-time\",\"type\":\"string\"},\"wind_speed\":{\"description\":\"Wind speed\",\"format\":\"double\",\"type\":\"number\"}},\"type\":\"object\"},\"forecast\":{\"description\":\"Array of forecast data for upcoming days\",\"items\":{\"properties\":{\"conditions\":{\"description\":\"Expected weather conditions\",\"type\":\"string\"},\"date\":{\"description\":\"Forecast date\",\"format\":\"date\",\"type\":\"string\"},\"humidity\":{\"description\":\"Average humidity percentage\",\"format\":\"double\",\"type\":\"number\"},\"precipitation_chance\":{\"description\":\"Probability of precipitation (0-100)\",\"format\":\"double\",\"type\":\"number\"},\"temperature_high\":{\"description\":\"High temperature for the day\",\"format\":\"double\",\"type\":\"number\"},\"temperature_low\":{\"description\":\"Low temperature for the day\",\"format\":\"double\",\"type\":\"number\"}},\"type\":\"object\"},\"type\":\"array\"},\"location\":{\"properties\":{\"country\":{\"description\":\"Country code\",\"type\":\"string\"},\"latitude\":{\"description\":\"Latitude coordinate\",\"format\":\"double\",\"type\":\"number\"},\"longitude\":{\"description\":\"Longitude coordinate\",\"format\":\"double\",\"type\":\"number\"},\"name\":{\"description\":\"Location name\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Successful response with weather data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"code\":\"INVALID_LOCATION\",\"error\":\"Invalid location parameter\"},\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"404\":{\"content\":{\"application/json\":{\"example\":{\"code\":\"LOCATION_NOT_FOUND\",\"error\":\"Location not found\"},\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Location not found\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"code\":\"INTERNAL_ERROR\",\"error\":\"Internal server error\"},\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/weather",
@@ -148,13 +218,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -245,6 +525,102 @@
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
           "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
+          "version": "0.0.1"
         }
       },
       "flow": {
@@ -294,6 +670,48 @@
         "website": "https://baguette-radar.com"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -848,6 +1266,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -889,7 +1308,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

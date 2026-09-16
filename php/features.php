@@ -4,7 +4,10 @@ declare(strict_types=1);
 // WeatherForecast SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class WeatherForecastFeatures
@@ -14,8 +17,14 @@ class WeatherForecastFeatures
         switch ($name) {
             case "base":
                 return new WeatherForecastBaseFeature();
+            case "ratelimit":
+                return new WeatherForecastRatelimitFeature();
+            case "retry":
+                return new WeatherForecastRetryFeature();
             case "test":
                 return new WeatherForecastTestFeature();
+            case "timeout":
+                return new WeatherForecastTimeoutFeature();
             default:
                 return new WeatherForecastBaseFeature();
         }
@@ -31,7 +40,10 @@ class WeatherForecastFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

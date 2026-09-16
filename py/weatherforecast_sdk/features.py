@@ -1,12 +1,18 @@
 # WeatherForecast SDK feature factory
 
 from weatherforecast_sdk.feature.base_feature import WeatherForecastBaseFeature
+from weatherforecast_sdk.feature.ratelimit_feature import WeatherForecastRatelimitFeature
+from weatherforecast_sdk.feature.retry_feature import WeatherForecastRetryFeature
 from weatherforecast_sdk.feature.test_feature import WeatherForecastTestFeature
+from weatherforecast_sdk.feature.timeout_feature import WeatherForecastTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: WeatherForecastBaseFeature(),
+    "ratelimit": lambda: WeatherForecastRatelimitFeature(),
+    "retry": lambda: WeatherForecastRetryFeature(),
     "test": lambda: WeatherForecastTestFeature(),
+    "timeout": lambda: WeatherForecastTimeoutFeature(),
 }
 
 
