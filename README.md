@@ -105,12 +105,12 @@ local results, err = client:Weather():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/weather-forecast-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
-| Python | `voxgig-sdk-weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
-| PHP | `voxgig-sdk/weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
+| TypeScript | `@voxgig-sdk/weather-forecast-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/tags) |
+| Python | `voxgig-sdk-weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/tags) |
+| PHP | `voxgig-sdk/weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/weather-forecast-sdk/go` | `go get github.com/voxgig-sdk/weather-forecast-sdk/go@latest` |
-| Ruby | `voxgig-sdk-weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
-| Lua | `voxgig-sdk-weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/releases) |
+| Ruby | `voxgig-sdk-weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/tags) |
+| Lua | `voxgig-sdk-weather-forecast` | publish pending — [install from git tag](https://github.com/voxgig-sdk/weather-forecast-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/weather-forecast-sdk/go-cli` | `go install github.com/voxgig-sdk/weather-forecast-sdk/go-cli/cmd/weather-forecast@latest` |
 | Go MCP server | `github.com/voxgig-sdk/weather-forecast-sdk/go-mcp` | `go get github.com/voxgig-sdk/weather-forecast-sdk/go-mcp@latest` |
 
